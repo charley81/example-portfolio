@@ -3,13 +3,39 @@ import Layout from '../components/Layout'
 import { graphql } from 'gatsby'
 import Blogs from '../components/Blogs'
 
-const Blog = ({ data }) => {
+const Blog = ({
+  data: {
+    allStrapiBlogs: { nodes: blogs },
+  },
+}) => {
   return (
     <Layout>
       <section className="blog-page">
-        <h3>blog pge</h3>
+        <Blogs blogs={blogs} title="blog" />
       </section>
     </Layout>
   )
 }
 export default Blog
+
+export const query = graphql`
+  {
+    allStrapiBlogs {
+      nodes {
+        slug
+        desc
+        date(formatString: "MMM Do, YYYY")
+        id
+        title
+        category
+        image {
+          childImageSharp {
+            fluid {
+              src
+            }
+          }
+        }
+      }
+    }
+  }
+`
