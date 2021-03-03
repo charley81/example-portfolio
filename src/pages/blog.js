@@ -7,31 +7,9 @@ const Blog = ({ data }) => {
   return (
     <Layout>
       <section className="blog-page">
-        <Blogs title="blog" />
+        <h3>blog pge</h3>
       </section>
     </Layout>
   )
 }
 export default Blog
-
-export const query = graphql`
-  {
-    allStrapiBlogs {
-      nodes {
-        slug
-        desc
-        date(formatString: "MMM Do, YYYY")
-        id
-        title
-        category
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    }
-  }
-`

@@ -3,7 +3,6 @@ import Title from './Title'
 import Blog from './Blog'
 import { Link } from 'gatsby'
 export const Blogs = ({ blogs, title, showLink }) => {
-  console.log(blogs)
   return (
     <section className="section">
       <Title title={title} />
