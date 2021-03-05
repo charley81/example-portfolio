@@ -4,8 +4,9 @@ import Image from 'gatsby-image'
 import { Link } from 'gatsby'
 
 const Blog = ({ id, title, slug, desc, image, date, category }) => {
+  console.log(slug)
   return (
-    <Link to={`/blog/${slug}`} key={id} className="blog">
+    <Link to={`/blogs/${slug}`} key={id} className="blog">
       <article>
         <Image fluid={image.childImageSharp.fluid} className="blog-img" />
         <div className="blog-card">
